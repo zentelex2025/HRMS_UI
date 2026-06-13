@@ -14,7 +14,13 @@ import {
   Typography,
 } from "@mui/material";
 
-const FetchAllEmployee = ({ employeeData, setFormData, formData }) => {
+const FetchAllEmployee = ({
+  employeeData,
+  setFormData,
+  formData,
+  formHandler,
+}) => {
+  console.log(formData);
   return (
     <main className="container">
       <Box className="employee-list">
@@ -26,6 +32,8 @@ const FetchAllEmployee = ({ employeeData, setFormData, formData }) => {
               placeholder="Search by Name, Department, or Site"
               size="small"
               name="search_by_unique"
+              value={formData.search_by_unique || ""}
+              onChange={formHandler}
             />
 
             <Button variant="contained">Add Employee</Button>
@@ -50,61 +58,70 @@ const FetchAllEmployee = ({ employeeData, setFormData, formData }) => {
               </TableHead>
 
               <TableBody>
-                {employeeData.map((employee, index) => (
-                  <TableRow key={employee.id}>
-                    <TableCell>{index + 1}</TableCell>
+                {employeeData
+                  .filter((emp) =>
+                    formData.search_by_unique
+                      ? [emp.first_name, emp.email]
+                          .join(" ")
+                          .toLowerCase()
+                          .includes(formData.search_by_unique)
+                      : employeeData,
+                  )
+                  .map((employee, index) => (
+                    <TableRow key={employee.id}>
+                      <TableCell>{index + 1}</TableCell>
 
-                    <TableCell>{employee.id}</TableCell>
+                      <TableCell>{employee.id}</TableCell>
 
-                    <TableCell>
-                      <Avatar
-                        src={employee.image}
-                        alt={employee.first_name}
-                        sx={{
-                          width: 42,
-                          height: 42,
-                        }}
-                      />
-                    </TableCell>
+                      <TableCell>
+                        <Avatar
+                          src={employee.image}
+                          alt={employee.first_name}
+                          sx={{
+                            width: 42,
+                            height: 42,
+                          }}
+                        />
+                      </TableCell>
 
-                    <TableCell>{employee.first_name}</TableCell>
+                      <TableCell>{employee.first_name}</TableCell>
 
-                    <TableCell>{employee.email}</TableCell>
+                      <TableCell>{employee.email}</TableCell>
 
-                    <TableCell>
-                      <Chip
-                        label={employee.department}
-                        color="success"
-                        size="small"
-                        variant="outlined"
-                      />
-                    </TableCell>
+                      <TableCell>
+                        <Chip
+                          label={employee.department}
+                          color="success"
+                          size="small"
+                          variant="outlined"
+                        />
+                      </TableCell>
 
-                    <TableCell>
-                      <Chip
-                        label={employee.site}
-                        color="primary"
-                        size="small"
-                        variant="outlined"
-                      />
-                    </TableCell>
+                      <TableCell>
+                        <Chip
+                          label={employee.site}
+                          color="primary"
+                          size="small"
+                          variant="outlined"
+                        />
+                      </TableCell>
 
-                    <TableCell>
-                      <Chip
-                        label={employee.designation}
-                        color="secondary"
-                        size="small"
-                        variant="outlined"
-                      />
-                    </TableCell>
+                      <TableCell>
+                        <Chip
+                          label={employee.designation}
+                          color="secondary"
+                          size="small"
+                          variant="outlined"
+                        />
+                      </TableCell>
 
-                    <TableCell align="center">
-                      <Button size="small" variant="contained">
-                        View
-                      </Button>
-                    </TableCell>
-                  </TableRow>
-                ))}
+                      <TableCell align="center">
+                        <Button size="small" variant="contained">
+                          View
+                        </Button>
+                      </TableCell>
+                    </TableRow>
+                  ))}
               </TableBody>
             </Table>
           </TableContainer>

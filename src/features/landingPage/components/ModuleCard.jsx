@@ -131,15 +131,19 @@ export const Attendance_card = () => {
       </div>
 
       <div className="module-card__stats">
-        <div className="stat stat--yellow">
-          <h4>View Attendance</h4>
-          <p>All records overview</p>
-        </div>
+        <Link to="/attendance" className="link-class_txtNone">
+          <div className="stat stat--yellow">
+            <h4>View Attendance</h4>
+            <p>All records overview</p>
+          </div>
+        </Link>
 
-        <div className="stat stat--blue">
-          <h4>Holidays Management</h4>
-          <p>Adding and updating holidays</p>
-        </div>
+        <Link to="/holiday" className="link-class_txtNone">
+          <div className="stat stat--blue">
+            <h4>Holidays Management</h4>
+            <p>Adding and updating holidays</p>
+          </div>
+        </Link>
       </div>
     </div>
   );

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "../components/heroSecond.scss";
 import {
   Attendance_card,
@@ -53,7 +54,7 @@ const HeroSecond = () => {
         <div className="module-grid">
           <Employee_card />
           <Salary_card />
-          <Attendance_card />
+          <Attendance_card {...Link} />
           <OtherFeatures_card />
         </div>
       </div>

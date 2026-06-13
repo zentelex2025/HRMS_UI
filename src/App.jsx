@@ -1,8 +1,9 @@
 import { Routes, Route } from "react-router-dom";
 import { LandingRoute } from "./features/landingPage/index";
 import { EmployeeRoute } from "./features/employee/Route";
+import { attendanceRoute } from "./features/attendance/Route";
 
-const routes = [...LandingRoute, ...EmployeeRoute];
+const routes = [...LandingRoute, ...EmployeeRoute, ...attendanceRoute];
 console.log({ routes });
 const App = () => {
   return (
