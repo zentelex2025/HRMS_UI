@@ -5,7 +5,6 @@ const Attendance = () => {
   return (
     <main>
       <ManualAttendance />
-      <DynamicAttendance />
     </main>
   );
 };

@@ -1,7 +1,11 @@
 import React from "react";
 
 const ManualAttendance = () => {
-  return <div>ManualAttendance</div>;
+  return (
+    <main>
+      <section></section>
+    </main>
+  );
 };
 
 export default ManualAttendance;
