@@ -1,10 +1,13 @@
 main {
-  padding: 1rem;
-  overflow-x: auto;
+  .table-container {
+    padding: 20px;
+  }
 
   table {
     border-collapse: collapse;
     background: #fff;
+    box-shadow: 5px 5px rgba(53, 14, 14, 0.416);
+    margin: auto;
   }
 
   th,
@@ -13,7 +16,8 @@ main {
     text-align: center;
     min-width: 30px;
     height: 40px;
-    font-size: 12px;
+    font-size: 15px;
+    padding: 3px;
   }
 
   th {
@@ -32,11 +36,6 @@ main {
   h4 {
     margin: 0;
     font-size: 17px;
-  }
-
-  span {
-    font-size: 11px;
-    color: #6c2aa6;
   }
 
   .present {
@@ -58,4 +57,55 @@ main {
     background: #ff6b6b;
     color: white;
   }
+}
+
+//**********************************************************
+.totals-cell {
+  width: 90px;
+  min-width: 90px !important;
+  padding: 2px !important;
+  background: #ddd6e8;
+}
+
+.totals-table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+
+  th,
+  td {
+    border: 1px solid #cfcfcf;
+    width: 22px;
+    min-width: 22px;
+    height: 18px;
+    padding: 0;
+    font-size: 11px;
+    text-align: center;
+  }
+
+  th {
+    color: #fff;
+    font-weight: 600;
+  }
+
+  .p {
+    background: #18d84f;
+  }
+
+  .half {
+    background: #f2a11f;
+  }
+
+  .a {
+    background: #2f3f55;
+  }
+
+  .tp {
+    background: #48a8ff;
+  }
+}
+
+th:last-child {
+  width: 75px;
+  min-width: 75px;
 }

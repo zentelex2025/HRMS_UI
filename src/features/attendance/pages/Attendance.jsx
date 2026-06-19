@@ -1,4 +1,3 @@
-import DynamicAttendance from "../components/DynamicAttendance";
 import ManualAttendance from "../components/ManualAttendance";
 import { curCalendarFormat } from "../utils/lib";
 import "../components/manualAttendance.scss";

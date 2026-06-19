@@ -1,5 +1,5 @@
 import React from "react";
-export const attendanceData = [
+const attendanceData = [
   {
     id: "EMP001",
     name: "John Doe",
@@ -12,7 +12,7 @@ export const attendanceData = [
   },
 ];
 
-export const days = [
+const days = [
   { day: 1, week: "Sat" },
   { day: 2, week: "Sun" },
   { day: 3, week: "Mon" },
@@ -48,7 +48,7 @@ export const days = [
 const ManualAttendance = () => {
   return (
     <main>
-      <section>
+      <section className="table-container">
         <table>
           <thead>
             <tr>
@@ -94,11 +94,26 @@ const ManualAttendance = () => {
                     {employee.attendance.includes(day.day) ? "✓" : "--"}
                   </td>
                 ))}
+                <td className="totals-cell">
+                  <table className="totals-table">
+                    <thead>
+                      <tr>
+                        <th className="p">P</th>
+                        <th className="half">½</th>
+                        <th className="a">A</th>
+                        <th className="tp">TP</th>
+                      </tr>
+                    </thead>
 
-                <td>
-                  <div>P : {employee.attendance.length}</div>
-
-                  <div>A : {days.length - employee.attendance.length}</div>
+                    <tbody>
+                      <tr>
+                        <td>{employee.attendance.length}</td>
+                        <td>0</td>
+                        <td>{days.length - employee.attendance.length}</td>
+                        <td>{employee.attendance.length}.0</td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </td>
               </tr>
             ))}
