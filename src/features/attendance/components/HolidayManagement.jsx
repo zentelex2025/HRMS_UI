@@ -3,7 +3,7 @@ import YearCard from "./YearCard";
 import AddIcon from "@mui/icons-material/Add";
 import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
 
-const HolidayManagement = () => {
+const HolidayManagement = ({ setEdit }) => {
   return (
     <main>
       <section className="holiday-card-container">
@@ -17,7 +17,7 @@ const HolidayManagement = () => {
             <span>2025</span>
             <button>&gt;</button>
           </div>
-          <button className="edit-btn">
+          <button className="edit-btn" onClick={() => setEdit(true)}>
             <EditOutlinedIcon />
           </button>
         </div>

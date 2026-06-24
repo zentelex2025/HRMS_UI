@@ -80,22 +80,24 @@ export const Salary_card = () => {
           <h3>Salary Management</h3>
         </div>
 
-        <button className="module-card__action">
-          <div>
-            <span>Payroll History Records</span>
-            <small>Viewing history, preview payslip model</small>
-          </div>
+        <Link to="salary-management/create" className="link-class_txtNone">
+          <button className="module-card__action">
+            <div>
+              <span>Create the salary</span>
+              <small>Creating the salary for the employee's</small>
+            </div>
 
-          <div className="module-card__plus">
-            <FaPlus />
-          </div>
-        </button>
+            <div className="module-card__plus">
+              <FaPlus />
+            </div>
+          </button>
+        </Link>
       </div>
 
       <div className="module-card__stats">
         <div className="stat stat--blue">
-          <h4>Payroll Overview</h4>
-          <p>Smart editable salary computation</p>
+          <h4>Payroll History Records</h4>
+          <p> Viewing history, preview payslip model</p>
         </div>
 
         <div className="stat stat--purple">
@@ -167,6 +169,13 @@ export const OtherFeatures_card = () => {
           <h4>Salary Calculator</h4>
           <p>Before assigning rough calculation</p>
         </div>
+
+        <Link to="/interview" className="link-class_txtNone">
+          <div className="stat stat--blue">
+            <h4>Interview Scheduler</h4>
+            <p>Schedule the interview </p>
+          </div>
+        </Link>
       </div>
     </div>
   );
